@@ -11,7 +11,18 @@ public class HelloWorld {
     private static Logger logger =Logger.getLogger(HelloWorld.class);
 
     public static void main(String[] args) {
-        logger.info("你好");
+
+        try {
+            int a=10/0;
+            System.out.println(a);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.info(e.toString());
+            logger.info(e.getCause());
+            logger.info(e.getMessage());
+            logger.error(e.getMessage(),e);
+
+        }
     }
 
 }
